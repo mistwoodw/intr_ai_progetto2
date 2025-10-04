@@ -1,0 +1,29 @@
+# --- File di sistema ---
+.DS_Store
+Thumbs.db
+
+# --- Cache e compilati Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+
+# --- Licenze locali e file sensibili ---
+pysmile_license.py
+
+# --- File di progetto Genie/SMILE ---
+*.xdsl
+*.dsl
+*.xdsl.bak
+*.xdsl.tmp
+
+# --- Documenti di output ---
+*.pdf
+*.docx
+*.xlsx
+*.csv
+
+# --- Cartelle di test o temporanee ---
+Prove/
+backup/
+temp/
+logs/
