@@ -3,7 +3,6 @@ import pysmile_license
 from pathlib import Path
 import random
 
-NUM_ISTANTI = 5
 
 def run_autopilot():
     # Caricamento rete
@@ -16,9 +15,9 @@ def run_autopilot():
     # net.set_evidence("Posizione_Iniziale", random.choices(net.get_outcome_ids("Posizione_Iniziale"),net.get_node_definition("Posizione_Iniziale"), k=1)[0])
     # print(f"Posizione Iniziale campionata: {net.get_evidence_id('Posizione_Iniziale')}")
     net.update_beliefs()
-    
+    num_istanti = net.get_slice_count()
 
-    for t in range(0, NUM_ISTANTI):
+    for t in range(0, num_istanti):
         print(f"\n--- ISTANTE {t} ---")
         # autochoose_outcome(net, "Meteo", t)
         # autochoose_outcome(net, "Terreno", t)
@@ -71,6 +70,7 @@ def ask_user_decision(net, node_id, time_slice):
     
     print(f"Vuoi effettuare {net.get_node_name(node_id)}:")
     outcome_count = net.get_outcome_count(node_id)
+    print(net.get_node_value(node_id))
     for i in range(outcome_count):
         outcome = net.get_outcome_id(node_id, i)
         outcome_EU = net.get_node_value(node_id)[time_slice*outcome_count+i]

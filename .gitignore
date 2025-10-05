@@ -12,6 +12,7 @@ pysmile_license.py
 
 # --- File di progetto Genie/SMILE ---
 *.xdsl
+!Network2_rev3.xdsl
 *.dsl
 *.xdsl.bak
 *.xdsl.tmp
